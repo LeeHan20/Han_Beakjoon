@@ -1,13 +1,10 @@
 from collections import Counter
 
 def make_input():
-    #n, m, k = map(int, input().split())
-    #metrix = [list(input().rstrip()) for _ in range(n)]
-    n, m, k = 4, 6, 2
-    metrix = [  ["A","B","C","B","A","B"],
-                ["B","B","A","C","C","A"],
-                ["B","P","A","Z","B","B"],
-                ["B","B","A","A","B","B"]  ]
+    n, m, k = map(int, input().split())
+    metrix = [list(input().rstrip()) for _ in range(n)]
+    #n, m, k = 4, 6, 2
+    #metrix = [  ["A","B","C","B","A","B"],["B","B","A","C","C","A"],["B","P","A","Z","B","B"],["B","B","A","A","B","B"]  ]
     return n, m, k, metrix
 
 def devide_into_kk(n, m, k, metrix):
