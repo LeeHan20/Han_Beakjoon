@@ -1,29 +1,23 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <numeric>
+#include <cmath>
 using namespace std;
 
 int main() {
-
     int n, m;
     cin >> n >> m;
-    // n = 3;
-    // m = 16;
-    vector<int> arr(m + 1, 1);
-    arr[0] = arr[1] = 0;
-
+    vector<int> decimal(m + 1, 1);
+    decimal[0] = decimal[1] = 0;
     for (int i = 2; i <= sqrt(m); i++) {
-        if (arr[i] == 1) {
+        if (decimal[i] == 1) {
             for (int j = i * i; j <= m; j += i) {
-                arr[j] = 0;
+                decimal[j] = 0;
             }
         }
     }
-
     for (int i = n; i <= m; i++) {
-        if (arr[i] == 1) {
-            cout << i << endl;
+        if (decimal[i] == 1) {
+            cout << i << '\n';
         }
     }
     return 0;
