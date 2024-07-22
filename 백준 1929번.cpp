@@ -8,8 +8,8 @@ int main() {
 
     int n, m;
     cin >> n >> m;
-    // n = 3
-    // m = 16
+    // n = 3;
+    // m = 16;
     vector<int> arr(m + 1, 1);
     arr[0] = arr[1] = 0;
 
