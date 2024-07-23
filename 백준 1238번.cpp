@@ -50,10 +50,8 @@ int main() {
 
     input();
     
-    // 정점들에서 X로 가는 최단거리
     dijkstra(1);
     
-    // X에서 정점들로 가는 최단거리
     dijkstra(0);
     
     int res = 0;
@@ -65,3 +63,5 @@ int main() {
     
     return 0;
 }
+
+// 지피티햄 고마워요
