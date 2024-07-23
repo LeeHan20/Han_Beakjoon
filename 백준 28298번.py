@@ -2,32 +2,32 @@ from collections import Counter
 
 def make_input():
     n, m, k = map(int, input().split())
-    metrix = [list(input().rstrip()) for _ in range(n)]
+    matrix = [list(input().rstrip()) for _ in range(n)]
     #n, m, k = 4, 6, 2
-    #metrix = [  ["A","B","C","B","A","B"],["B","B","A","C","C","A"],["B","P","A","Z","B","B"],["B","B","A","A","B","B"]  ]
-    return n, m, k, metrix
+    #matrix = [  ["A","B","C","B","A","B"],["B","B","A","C","C","A"],["B","P","A","Z","B","B"],["B","B","A","A","B","B"]  ]
+    return n, m, k, matrix
 
-def devide_into_kk(n, m, k, metrix):
-    new_metrix = []
+def devide_into_kk(n, m, k, matrix):
+    new_matrix = []
     for i in range(0, n, k):
         for j in range(0, m, k):
             inlist = []
             for a in range(k):
                 for x in range(k):
-                    inlist.append(metrix[i+a][j+x])
-            new_metrix.append(inlist)
-    return new_metrix
+                    inlist.append(matrix[i+a][j+x])
+            new_matrix.append(inlist)
+    return new_matrix
 
-def find_alpha_and_make_metrix(k, metrix):
+def find_alpha_and_make_matrix(k, matrix):
     count_similarity = k**2
-    new_metrix = metrix[:]
+    new_matrix = matrix[:]
     for i in range(k**2):
-        column = [new_metrix[j][i] for j in range(len(new_metrix))]
+        column = [new_matrix[j][i] for j in range(len(new_matrix))]
         most_fre_alpha, freq = Counter(column).most_common(1)[0]
         count_similarity += freq - 1
-        for j in range(len(new_metrix)):
-            new_metrix[j][i] = most_fre_alpha
-    return new_metrix[0], count_similarity
+        for j in range(len(new_matrix)):
+            new_matrix[j][i] = most_fre_alpha
+    return new_matrix[0], count_similarity
 
 def print_min_tile(n, m, k, one_min_tile):
     one_min_tile = "".join(one_min_tile)
@@ -40,9 +40,9 @@ def print_min_tile(n, m, k, one_min_tile):
             print(new_restore[i])
 
 def main():
-    n, m, k, metrix = make_input()
-    new_metrix = devide_into_kk(n, m, k, metrix)
-    one_min_tile, count_similarity = find_alpha_and_make_metrix(k, new_metrix)
+    n, m, k, matrix = make_input()
+    new_matrix = devide_into_kk(n, m, k, matrix)
+    one_min_tile, count_similarity = find_alpha_and_make_matrix(k, new_matrix)
     min_tile_change = n * m - count_similarity
     print(min_tile_change)
     print_min_tile(n, m, k, one_min_tile)
