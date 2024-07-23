@@ -48,3 +48,6 @@ def main():
     print_min_tile(n, m, k, one_min_tile)
 
 main()
+
+# def를 사용하면 보기에는 아주 좋지만
+# 정작 코드를 쓸 때는 시간이 아주 많이 든다 ㅜㅡㅜ
