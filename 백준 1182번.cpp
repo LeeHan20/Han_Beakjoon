@@ -49,7 +49,7 @@ int main() {
 }
 
 //ios::sync_with_stdio(false);
-// -> c와 c++에서 scanf와 cin의 혼용 사용을 염두에 두었으나 버퍼를 공유하지 않게 동기화를 비활성화시킴
+// -> c와 c++에서의 scanf와 cin의 혼용 사용을 염두에 두었으나 버퍼를 공유하지 않게 동기화를 비활성화시킴
 //cin.tie(nullptr);
 // -> cin과 cout의 묶음을 해제하여 각각을 사용할 때 반대편의 버퍼를 플러시하지 않음
 
